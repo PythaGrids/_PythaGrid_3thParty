@@ -1,7 +1,6 @@
 .CodeMirror-hints {
   position: absolute;
-  /*z-index: 10;*/  /* modified */
-  z-index: 1000;    /* modified */
+  z-index: 10;
   overflow: hidden;
   list-style: none;
 

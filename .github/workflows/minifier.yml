@@ -12,26 +12,37 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: make dev-index
+        run: |
+          find src > dev-index.txt
+
+      - name: make temp
+        run: |
+          mkdir temp
+
       - name: HTML/CSS/JS Minifier
         uses: docker://devatherock/minify-js:3.1.0  # https://github.com/devatherock/minify-js
         with:
           directory: 'src'
+          output: 'temp'
           exclusions: |-
             .*min\.(js|css)$
-
-      - name: make dev-index
-        run: |
-          find src > dev-index.txt
 
       - name: merge js
         run: |
           find src -type f -name '*.min.js' -ls
           find src -type f -name '*.min.js' -exec cat {} + > out/main.min.js
+          find temp -type f -name '*.min.js' -exec cat {} + >> out/main.min.js
 
       - name: merge css
         run: |
           find src -type f -name '*.min.css' -ls
           find src -type f -name '*.min.css' -exec cat {} + > out/main.min.css
+          find temp -type f -name '*.min.css' -exec cat {} + >> out/main.min.css
+
+      - name: remove temp
+        run: |
+          rm -rv temp
 
       - name: timestamp
         run: |
