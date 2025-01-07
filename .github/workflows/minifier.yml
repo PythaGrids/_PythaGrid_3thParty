@@ -1,7 +1,7 @@
 name: HTML/CSS/JS Minifier
 
 on:
-  # push:
+  push:
   release:
     types: [created]
 
@@ -12,43 +12,56 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: make dev-index
+      - name: make workspace
         run: |
-          find src > dev-index.txt
-
-      - name: make temp
-        run: |
-          mkdir temp
+          cp -vr src temp   # keep the file order
+          
+          echo " [i] files to minimize:"
+          find temp -type f ! -name '*.min.js' ! -name '*.min.css' ! -name '*.min.html' -ls
 
       - name: HTML/CSS/JS Minifier
         uses: docker://devatherock/minify-js:3.1.0  # https://github.com/devatherock/minify-js
         with:
-          directory: 'src'
-          output: 'temp'
+          directory: 'temp'
           exclusions: |-
-            .*min\.(js|css)$
+            .*min\.(js|css|html)$
 
-      - name: merge js
+      - name: merge and cleanup
         run: |
-          find src -type f -name '*.min.js' -ls
-          find src -type f -name '*.min.js' -exec cat {} + > out/main.min.js
-          find temp -type f -name '*.min.js' -exec cat {} + >> out/main.min.js
-
-      - name: merge css
-        run: |
-          find src -type f -name '*.min.css' -ls
-          find src -type f -name '*.min.css' -exec cat {} + > out/main.min.css
-          find temp -type f -name '*.min.css' -exec cat {} + >> out/main.min.css
-
-      - name: remove temp
-        run: |
-          rm -rv temp
-
-      - name: timestamp
-        run: |
+          echo " [Clear] out/*"
+          rm -vr out/*
+          
+          echo " [Make] dev.in"
+          find src -ls -fprint out/dev.in
+          
+          echo " [Merge] js"
+          find temp -type f -name '*.min.js' -exec bash -c 'ls -l "{}"; cat "{}" >> out/main.min.js' \;
+          
+          echo " [Merge] css"
+          find temp -type f -name '*.min.css' -exec bash -c 'ls -l "{}"; cat "{}" >> out/main.min.css' \;
+          
+          echo " [Copy] html"
+          find temp -type f -name '*.min.html' -exec cp "{}" out/ \;
+          
+          ain=assets.in
+          if [ -f "${ain}" ] && [ $(wc -w < "${ain}") -ne 0 ]; then
+            echo " [Copy] assets (${ain})"
+            cp -vr $(cat "${ain}") out/
+          else
+            echo " [Skip] assets (${ain})"
+          fi
+          
+          echo " [Copy] README.rst"
+          cp -v README.rst out/
+          
+          echo " [Make] timestamp"
           date --utc > out/timestamp
+          ls -l out/timestamp
+          
+          echo " [Cleanup]"
+          rm -vr temp
 
-      - name: Checkout
+      - name: checkout
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email 'github-actions[bot]@users.noreply.github.com'
