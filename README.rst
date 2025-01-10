@@ -1,9 +1,9 @@
 
 
 .. csv-table:: *Sources*
-    :header: "File",                            "Licence",               "Project Home",                         "Source",                                                                                       "modified"
+    :header: "File",                            "Licence",               "Project Home",                         "Source",
 
-    "ag-grid-community-33.0.3--modified.js",    |ag-LICENCE|_,           "https://www.ag-grid.com/",             "https://github.com/ag-grid/ag-grid",                                                           "x"
+    "ag-grid-community-33.0.3.min.js",          |ag-LICENCE|_,           "https://www.ag-grid.com/",             "https://github.com/ag-grid/ag-grid",
     "bootstrap-5.3.3.min.css",                  |bootstrap-LICENCE|_,    "https://github.com/twbs/bootstrap",    "https://github.com/twbs/bootstrap",
     "codemirror-5.65.18/*",                     |codemirror-LICENCE|_,   "https://codemirror.net/5/",            "https://cdnjs.com/libraries/codemirror/5.65.18",
     "jquery/jquery-3.7.1.min.js",               |jquery-LICENCE|_,       "https://jquery.com/",                  "https://code.jquery.com/jquery-3.7.1.min.js",
@@ -26,7 +26,7 @@
 
 .. LICENCES (plain):
 
-    ag-grid-community-33.0.3--modified.js:
+    ag-grid-community-33.0.3.min.js:
         LICENCE >
             This project is made up of many packages. There are two license types: MIT and Commercial.
 
