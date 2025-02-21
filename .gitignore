@@ -166,4 +166,3 @@ cython_debug/
 .doc/
 .test/
 .utils/
-dev/
