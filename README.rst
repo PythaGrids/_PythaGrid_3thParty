@@ -1,13 +1,14 @@
 
 
 .. csv-table:: *Sources*
-    :header: "File",                            "Licence",               "Project Home",                         "Source",
+    :header: "File",                            "Licence",               "Project Home",                            "Source",
 
-    "ag-grid-community-33.0.3.min.js",          |ag-LICENCE|_,           "https://www.ag-grid.com/",             "https://github.com/ag-grid/ag-grid",
-    "bootstrap-5.3.3.min.css",                  |bootstrap-LICENCE|_,    "https://github.com/twbs/bootstrap",    "https://github.com/twbs/bootstrap",
-    "codemirror-5.65.18/*",                     |codemirror-LICENCE|_,   "https://codemirror.net/5/",            "https://cdnjs.com/libraries/codemirror/5.65.18",
-    "jquery/jquery-3.7.1.min.js",               |jquery-LICENCE|_,       "https://jquery.com/",                  "https://code.jquery.com/jquery-3.7.1.min.js",
-    "jquery/jquery-ui-1.14.1/*",                |jqueryui-LICENCE|_,     "https://jqueryui.com/",                "https://jqueryui.com/",
+    "ag-grid-community-33.0.3.min.js",          |ag-LICENCE|_,           "https://www.ag-grid.com/",                "https://github.com/ag-grid/ag-grid",
+    "bootstrap-5.3.3.min.css",                  |bootstrap-LICENCE|_,    "https://github.com/twbs/bootstrap",       "https://github.com/twbs/bootstrap",
+    "codemirror-5.65.18/*",                     |codemirror-LICENCE|_,   "https://codemirror.net/5/",               "https://cdnjs.com/libraries/codemirror/5.65.18",
+    "jquery/jquery-3.7.1.min.js",               |jquery-LICENCE|_,       "https://jquery.com/",                     "https://code.jquery.com/jquery-3.7.1.min.js",
+    "jquery/jquery-ui-1.14.1/*",                |jqueryui-LICENCE|_,     "https://jqueryui.com/",                   "https://jqueryui.com/",
+    "plotly-3.0.1.min.js",                      |plotly-LICENCE|_,       "https://plotly.com/graphing-libraries/",  "https://cdn.plot.ly/plotly-3.0.1.min.js",
 
 
 
@@ -16,12 +17,14 @@
 .. |codemirror-LICENCE| replace:: MIT
 .. |jquery-LICENCE| replace:: MIT
 .. |jqueryui-LICENCE| replace:: MIT
+.. |plotly-LICENCE| replace:: MIT
 
 .. _ag-LICENCE: https://github.com/ag-grid/ag-grid/blob/latest/LICENSE.txt
 .. _bootstrap-LICENCE: https://github.com/twbs/bootstrap/blob/main/LICENSE
 .. _codemirror-LICENCE: https://github.com/codemirror/codemirror5/blob/master/LICENSE
 .. _jquery-LICENCE: https://github.com/jquery/jquery/blob/main/LICENSE.txt
 .. _jqueryui-LICENCE: https://github.com/jquery/jquery-ui/blob/main/LICENSE.txt
+.. _plotly-LICENCE: https://github.com/plotly/plotly.js/blob/master/LICENSE
 
 
 .. LICENCES (plain):
@@ -169,4 +172,29 @@
             externally maintained libraries used by this software which have their
             own licenses; we recommend you read them, as their terms may differ from
             the terms above.
+        < LICENCE
+
+    plotly-3.0.1.min.js:
+        LICENCE >
+            MIT License
+
+            Copyright (c) 2016-2024 Plotly Technologies Inc.
+
+            Permission is hereby granted, free of charge, to any person obtaining a copy
+            of this software and associated documentation files (the "Software"), to deal
+            in the Software without restriction, including without limitation the rights
+            to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+            copies of the Software, and to permit persons to whom the Software is
+            furnished to do so, subject to the following conditions:
+
+            The above copyright notice and this permission notice shall be included in
+            all copies or substantial portions of the Software.
+
+            THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+            IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+            FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+            AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+            LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+            OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+            THE SOFTWARE.
         < LICENCE
